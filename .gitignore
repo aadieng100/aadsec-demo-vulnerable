@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+
+# Runtime data & uploads
+uploads/*
+!uploads/.gitkeep
+*.db
+*.sqlite
+
+# Terraform local state & caches
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# Environment variables & local secrets
+.env
+.env.local
+
+# AADSec audit outputs
+security-output/
+
+# OS / Editor artifacts
+.DS_Store
+*.swp
+*.bak

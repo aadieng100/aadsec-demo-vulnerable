@@ -1,0 +1,26 @@
+{
+  "name": "aadsec-demo-vulnerable",
+  "version": "1.0.0",
+  "description": "Intentionally vulnerable Node.js/Express demo app for AADSec DevSecOps audit demonstrations",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "security",
+    "demo",
+    "devsecops",
+    "aadsec",
+    "vulnerable"
+  ],
+  "author": "AADSec Team",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "jsonwebtoken": "8.5.1",
+    "multer": "1.4.4",
+    "sqlite3": "5.0.2"
+  }
+}
