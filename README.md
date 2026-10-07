@@ -73,9 +73,9 @@ When scanned with **AADSec**, this project produces findings across all four aud
 | **Secrets (Gitleaks)** | `app/lib/db.js` | Fake database connection string with password | `P0 / Critical` |
 | **Secrets (Gitleaks)** | `app/lib/crypto.js` | Fake AWS Access Key & Stripe test token | `P0 / Critical` |
 | **Secrets (Gitleaks)** | `Dockerfile` | Fake API tokens embedded in container `ENV` directives | `P1 / High` |
-| **SCA (Trivy)** | `app/package.json` | Pinned vulnerable packages (`express 4.17.1`, `jsonwebtoken 8.5.1`) | `P1 / High` |
+| **SCA (Trivy)** | `app/package.json` | Pinned packages: `body-parser 1.20.2` via `express 4.17.1` (ReDoS CVE-2024-45590), `jsonwebtoken 8.5.1` (CVE-2022-23529) | `P1 / High` |
 | **Container (Trivy)** | `Dockerfile` | Outdated `node:14-alpine` base image with unpatched OS CVEs | `P1 / High` |
-| **IaC (Checkov)** | `terraform/s3.tf` | S3 bucket with `public-read` ACL & disabled public block | `P0 / Critical` |
+| **IaC (Checkov)** | `terraform/s3.tf` | Risky code configuration: S3 bucket with `public-read` ACL & disabled public block | `P0 / Critical` |
 | **IaC (Checkov)** | `terraform/iam.tf` | Overly permissive IAM policy with wildcard `Action: *` | `P0 / Critical` |
 | **IaC (Checkov)** | `terraform/main.tf` | Security Group ingress open to `0.0.0.0/0` on all ports & SSH | `P1 / High` |
 | **IaC (Checkov)** | `terraform/main.tf` | Unencrypted EBS storage volume | `P2 / Medium` |
